@@ -1,5 +1,5 @@
 import numpy as np
-import _paramcheck as _pchk
+import adaptfilt.paramcheck as _pchk
 
 
 def nlmsru(u, d, M, step, eps=0.001, leak=0, initCoeffs=None, N=None,
@@ -147,7 +147,7 @@ def nlmsru(u, d, M, step, eps=0.001, leak=0, initCoeffs=None, N=None,
         W = np.zeros((N, M))  # Matrix to hold coeffs for each iteration
 
     # Perform filtering
-    for n in xrange(N):
+    for n in range(N):
         x = np.flipud(u[n:n+M])  # Slice to get view of M latest datapoints
         y[n] = np.dot(x, w)
         e[n] = d[n+M-1] - y[n]

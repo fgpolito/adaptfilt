@@ -16,11 +16,11 @@ except:
  available before using adaptfilt')
 
 # Import functions directly into adaptfilt namespace
-from lms import lms
-from nlms import nlms
-from nlmsru import nlmsru
-from ap import ap
-from misc import mswe
+from adaptfilt.lms import lms
+from adaptfilt.nlms import nlms
+from adaptfilt.nlmsru import nlmsru
+from adaptfilt.ap import ap
+from adaptfilt.misc import mswe
 
 
 def rundoctests(verbose=False):
@@ -38,8 +38,8 @@ def rundoctests(verbose=False):
     apres = doctest.testmod(testmod3, verbose=verbose)
     miscres = doctest.testmod(testmod4, verbose=verbose)
     nlmsrures = doctest.testmod(testmod5, verbose=verbose)
-    print '   LMS: ', lmsres
-    print '  NLMS: ', nlmsres
-    print 'NLMSRU: ', nlmsrures
-    print '    AP: ', apres
-    print '  MISC: ', miscres
+    print ('   LMS: ', lmsres)
+    print ('  NLMS: ', nlmsres)
+    print ('NLMSRU: ', nlmsrures)
+    print ('    AP: ', apres)
+    print ('  MISC: ', miscres)

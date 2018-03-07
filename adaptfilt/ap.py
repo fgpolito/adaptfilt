@@ -1,5 +1,5 @@
 import numpy as np
-import _paramcheck as _pchk
+import adaptfilt.paramcheck as _pchk
 
 
 def ap(u, d, M, step, K, eps=0.001, leak=0, initCoeffs=None, N=None,
@@ -145,7 +145,7 @@ def ap(u, d, M, step, K, eps=0.001, leak=0, initCoeffs=None, N=None,
         W = np.zeros((N, M))  # Matrix to hold coeffs for each iteration
 
     # Perform filtering
-    for n in xrange(N):
+    for n in range(N):
         # Generate U matrix and D vector with current data
         U = np.zeros((M, K))
         for k in np.arange(K):
